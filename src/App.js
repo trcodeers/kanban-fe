@@ -30,17 +30,18 @@ function App() {
     }
   });
 
-  const { mutate : addPostmutate } = useMutation({
+  const { mutate : addPostmutate, isLoading: addPostLoading  } = useMutation({
     mutationFn: addPost
   })
 
-  const { mutate : updatePostmutate } = useMutation({
+  const { mutate : updatePostmutate, isLoading: updatePostLoading} = useMutation({
     mutationFn: UpdatePost
   })
 
 
-  const { mutate : deletePostmutate } = useMutation({
-    mutationFn: DeltePost
+  const { mutate : deletePostmutate, isLoading: deletePostLoading } = useMutation({
+    mutationFn: DeltePost,
+    onSuccess: refetch
   })
 
 
@@ -94,7 +95,7 @@ function App() {
                     title={el.title}
                     description={el.description}
                     onEdit={() => onEdit(el.id)}
-                    // onDelete={() => console.log(el._id)}
+                    onDelete={() => deletePostmutate(el._id)}
                   />
   
                 })
@@ -113,7 +114,7 @@ function App() {
                     title={el.title}
                     description={el.description}
                     onEdit={() => onEdit(el.id)}
-                    // onDelete={() => onDelete(el.id)}
+                    onDelete={() => deletePostmutate(el._id)}
                   />
   
                 })
