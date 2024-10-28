@@ -65,14 +65,14 @@ function App() {
       />
 
       <div className="container mx-auto p-4">
-      <div className="flex items-center justify-between max-w-md mx-auto bg-white p-4 rounded-lg  ">
-    <h1 className="text-2xl font-bold text-gray-700">Task Manager</h1>
-    <button
-        className="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:from-blue-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition ease-in-out duration-200"
-    >
-        Add Task
-    </button>
-</div>
+        <div className="flex items-center justify-between max-w-md mx-auto bg-white p-4 rounded-lg  ">
+          <h1 className="text-2xl font-bold text-gray-700">Task Manager</h1>
+          <button
+            className="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:from-blue-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition ease-in-out duration-200"
+          >
+            Add Task
+          </button>
+        </div>
 
 
 
