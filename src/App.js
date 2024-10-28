@@ -54,8 +54,10 @@ function App() {
   }, [data]);
 
 
-  const onEdit = () => {
+  const onEdit = (el) => {
     console.log('edit')
+    
+
   }
 
   return (
@@ -85,7 +87,7 @@ function App() {
                   return <TaskCard
                     title={el.title}
                     description={el.description}
-                    onEdit={() => onEdit(el.id)}
+                    onEdit={() => onEdit(el)}
                     onDelete={() => deletePostmutate(el._id)}
                   />
 
@@ -103,7 +105,7 @@ function App() {
                   return <TaskCard
                     title={el.title}
                     description={el.description}
-                    onEdit={() => onEdit(el.id)}
+                    onEdit={() => onEdit(el)}
                     onDelete={() => deletePostmutate(el._id)}
                   />
 
@@ -122,7 +124,7 @@ function App() {
                   return <TaskCard
                     title={el.title}
                     description={el.description}
-                    onEdit={() => onEdit(el.id)}
+                    onEdit={() => onEdit(el)}
                     onDelete={() => deletePostmutate(el._id)}
                   />
 
