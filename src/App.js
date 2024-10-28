@@ -6,15 +6,15 @@ import { useQuery, useMutation } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 
 const addPost = (post) =>{
-  return axios.post('localhost:5000/task', post)
+  return axios.post('http://localhost:5000/task', post)
 }
 
 const UpdatePost = (id, post)=>{
-  return axios.put(`localhost:5000/task/${id}`, post)
+  return axios.put(`http://localhost:5000/task/${id}`, post)
 }
 
 const DeltePost = (id)=>{
-  return axios.put(`localhost:5000/task/${id}`)
+  return axios.delete(`http://localhost:5000/task/${id}`)
 }
 
 function App() {
@@ -57,10 +57,6 @@ function App() {
     console.log('edit')
   }
 
-  const onDelete = () =>{
-    console.log('delte')
-  }
-
   return (
     <>
       <TaskForm
@@ -80,7 +76,7 @@ function App() {
                     title={el.title}
                     description={el.description}
                     onEdit={() => onEdit(el.id)}
-                    onDelete={() => onDelete(el.id)}
+                    onDelete={() => deletePostmutate(el._id)}
                   />
   
                 })
@@ -93,12 +89,12 @@ function App() {
             <div className="space-y-4">
 
               {
-                inprogress.map((el, key)=>{
+                inprogress.map((el, index)=>{
                   return <TaskCard 
                     title={el.title}
                     description={el.description}
                     onEdit={() => onEdit(el.id)}
-                    onDelete={() => DeltePost(el.id)}
+                    // onDelete={() => console.log(el._id)}
                   />
   
                 })
@@ -117,7 +113,7 @@ function App() {
                     title={el.title}
                     description={el.description}
                     onEdit={() => onEdit(el.id)}
-                    onDelete={() => onDelete(el.id)}
+                    // onDelete={() => onDelete(el.id)}
                   />
   
                 })

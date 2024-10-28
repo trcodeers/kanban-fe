@@ -5,9 +5,9 @@ const TaskCard = ({ title, description, onEdit, onDelete }) => {
         <>
           <div className="max-w-xs mx-auto bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="p-4">
-                    <h2 className="text-xl font-semibold truncate">fvffdsf</h2>
+                    <h2 className="text-xl font-semibold truncate">{title}</h2>
                     <p className="mt-2 text-gray-600 truncate ">
-                        fdsfdsf dfdf
+                        {description}
                     </p>
                 </div>
                 <div className="flex justify-between items-center p-4 border-t">
