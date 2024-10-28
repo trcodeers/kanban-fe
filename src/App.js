@@ -68,7 +68,7 @@ function App() {
 
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [status, setStatus] = useState('TO DO');
+  const [status, setStatus] = useState('TO_DO');
 
   const onCreateTask = (e) => {
     e.preventDefault();
@@ -118,7 +118,10 @@ function App() {
                   id="status"
                   name="status"
                   value={status}
-                  onChange={(e) => setStatus(e.target.value)}
+                  onChange={(e) => {
+                    setStatus(e.target.value)
+                    console.log(e.target.value)
+                  }}
                   required
                   className="mt-2 block w-full px-4 py-3 border border-gray-300 bg-white rounded-lg shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition ease-in-out duration-200"
                 >
