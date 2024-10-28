@@ -6,16 +6,17 @@ import { useQuery, useMutation } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 import CustomDialog from './component/customDialog';
 
+
 const addPost = (post) => {
-  return axios.post('http://localhost:5000/task', post)
+  return axios.post('https://kanban-backend-yfb7.onrender.com/task', post)
 }
 
 const UpdatePost = (id, post) => {
-  return axios.put(`http://localhost:5000/task/${id}`, post)
+  return axios.put(`https://kanban-backend-yfb7.onrender.com/task/${id}`, post)
 }
 
 const DeltePost = (id) => {
-  return axios.delete(`http://localhost:5000/task/${id}`)
+  return axios.delete(`https://kanban-backend-yfb7.onrender.com/task/${id}`)
 }
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
   const { data, error, isLoading, refetch } = useQuery({
     queryKey: ['tasks'],
     queryFn: () => {
-      return axios.get('http://localhost:5000/task')
+      return axios.get('https://kanban-backend-yfb7.onrender.com/task')
     }
   });
 
